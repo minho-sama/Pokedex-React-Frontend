@@ -10,7 +10,7 @@ function Navbar({showTypes, setShowTypes}) {
         <>
         <nav>
             <img src = "https://i.imgur.com/MHIviTb.png" alt = "pokemon"/>
-            <a href = 'https://github.com/minho-sama/Pokedex-Frontend' target = '_blank' rel="noreferrer"><AiFillGithub id = "git-icon" size = "40px"/></a>
+            <a href = 'https://github.com/minho-sama/Pokedex-React-Frontend' target = '_blank' rel="noreferrer"><AiFillGithub id = "git-icon" size = "40px"/></a>
             <button id = "menu-button" onClick = {() => setShowTypes(!showTypes)}>
                 {showTypes ?  <ImCross size = "23px"/>
                              : <GoThreeBars size = "23px"/>}

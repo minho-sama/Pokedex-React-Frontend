@@ -35,6 +35,10 @@ function App() {
   }
 
   //typecontrollers
+
+  //ez menjen majd a routeba ahol type szerint listelem a pokemonokat
+    //ott lehet CRUD-olni
+    //nem kell újraírni mindent, importáld a pokemoncardokat és a sass-t is!!!
   const fetchPokemonsByType = async (id) => {
     const res = await fetch(`https://pokedex-api-minho.herokuapp.com/pokedex/type/${id}`)
     const data = await res.json()
@@ -101,7 +105,7 @@ function App() {
           {
             pokemons.length > 0 ? 
             pokemons.map(pokemon => {
-              return <PokemonCard key = {pokemon._id} pokemon = {pokemon} />
+              return <PokemonCard key = {pokemon._id} pokemon = {pokemon} decideTypeColor = {decideTypeColor} />
             }) :
             <img id = "loading-img" src = "https://i.imgur.com/IvobJfq.png" alt = "pokeball"/>
           }
