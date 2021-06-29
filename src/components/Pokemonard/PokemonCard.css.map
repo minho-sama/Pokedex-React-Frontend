@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,OAAO,CAAA;EACH,cAAc,EAAE,UAAU;CAC7B",
+    "sources": [
+        "PokemonCard.scss"
+    ],
+    "names": [],
+    "file": "PokemonCard.css"
+}

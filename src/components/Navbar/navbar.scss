@@ -1,0 +1,39 @@
+nav{
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    position:relative;
+    img{
+        width: 280px;
+    }
+    #git-icon{
+        color:rgb(241, 31, 31);
+        background:rgb(26, 26, 26);
+        border-radius:50%;
+        transition: 0.7s;
+        &:hover{
+            transform: rotate(360deg);
+        }
+    }
+
+    #menu-button{
+        position:absolute;
+        right: 15px;
+        background:none;
+        border:none;
+        cursor: pointer;
+        transition: 0.5s
+    }
+    #menu-button:hover{
+        transform: scale(1.1)
+    }
+}
+
+// @media only screen and (min-width: 900px) {
+//     #menu-button{
+//         right: 40px; 
+//         border: 1px solid red;
+//     }
+// }

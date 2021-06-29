@@ -1,0 +1,70 @@
+body{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+#type-container{
+    padding:0;
+    li{
+        width: 100%;
+        list-style: none;
+        display:flex;
+        justify-content: center;
+        cursor:pointer;
+        text-transform: capitalize;
+    }
+    .fire-type{
+        background:orange;
+        color:white;
+        transition: 0.2s;
+        &:hover{
+            background:white;
+            color:orange;
+        }
+    }
+    .water-type{
+        color:blue;
+    }
+    .grass-type{
+        color:green;
+    }
+    .flying-type{
+        color:red;
+    }
+    .thunder-type{
+        color:red;
+    }
+    .bug-type{
+        color:red;
+    }
+    .normal-type{
+        color:red;
+    }
+    .ground-type{
+        color:red;
+    }
+    .default-color{
+        color:rosybrown
+    }
+}
+
+article{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    #loading-img{
+        width: 280px;
+        animation: rotation 3s infinite linear;
+    }
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
