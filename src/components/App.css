@@ -6,64 +6,241 @@ body {
 }
 
 #type-container {
+  margin-top: 20px;
   padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 5px;
 }
 
 #type-container li {
-  width: 100%;
-  list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  list-style: none;
   cursor: pointer;
   text-transform: capitalize;
+  border: 2px solid #a4a4a4;
+  border-radius: 5px;
+  min-width: 110px;
+  max-width: 150px;
+  padding-bottom: 2px;
 }
 
 #type-container .fire-type {
-  background: orange;
-  color: white;
+  background: #ffa600;
+  color: #fff;
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
 
 #type-container .fire-type:hover {
-  background: white;
-  color: orange;
+  background: #fff;
+  color: #ffa600;
 }
 
 #type-container .water-type {
-  color: blue;
+  background: #4592c4;
+  color: #fff;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#type-container .water-type:hover {
+  background: #fff;
+  color: #4592c4;
 }
 
 #type-container .grass-type {
-  color: green;
+  background: #9bcc50;
+  color: #000000;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#type-container .grass-type:hover {
+  background: #fff;
+  color: #9bcc50;
+}
+
+#type-container .poison-type {
+  background: #b97fc9;
+  color: #fff;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#type-container .poison-type:hover {
+  background: #fff;
+  color: #b97fc9;
 }
 
 #type-container .flying-type {
-  color: red;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #3dc7ef), color-stop(50%, #bdb9b8));
+  background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+  color: #000000;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
-#type-container .thunder-type {
-  color: red;
+#type-container .flying-type:hover {
+  background: #fff;
+  color: #3dc7ef;
+}
+
+#type-container .electric-type {
+  background: #eed535;
+  color: #000000;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#type-container .electric-type:hover {
+  background: #fff;
+  color: #eed535;
 }
 
 #type-container .bug-type {
-  color: red;
+  background: #729f3f;
+  color: #fff;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#type-container .bug-type:hover {
+  background: #fff;
+  color: #729f3f;
 }
 
 #type-container .normal-type {
-  color: red;
+  background: #a4acaf;
+  color: #000000;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#type-container .normal-type:hover {
+  background: #fff;
+  color: #a4acaf;
 }
 
 #type-container .ground-type {
-  color: red;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #f7de3f), color-stop(50%, #ab9842));
+  background: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
+  color: #000000;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#type-container .ground-type:hover {
+  background: #fff;
+  color: #f7de3f;
+}
+
+#type-container .fairy-type {
+  background: #fdb9e9;
+  color: #000000;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#type-container .fairy-type:hover {
+  background: #fff;
+  color: #fdb9e9;
+}
+
+#type-container .fighting-type {
+  background: #d56723;
+  color: #fff;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#type-container .fighting-type:hover {
+  background: #fff;
+  color: #d56723;
+}
+
+#type-container .dragon-type {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #53a4cf), color-stop(50%, #f16e57));
+  background: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
+  color: #fff;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#type-container .dragon-type:hover {
+  background: #fff;
+  color: #53a4cf;
+}
+
+#type-container .ghost-type {
+  background: #7b62a3;
+  color: #fff;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#type-container .ghost-type:hover {
+  background: #fff;
+  color: #7b62a3;
+}
+
+#type-container .rock-type {
+  background: #a38c21;
+  color: #fff;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#type-container .rock-type:hover {
+  background: #fff;
+  color: #a38c21;
+}
+
+#type-container .ice-type {
+  background: #51c4e7;
+  color: #000000;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#type-container .ice-type:hover {
+  background: #fff;
+  color: #51c4e7;
+}
+
+#type-container .psychic-type {
+  background: #f366b9;
+  color: #fff;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#type-container .psychic-type:hover {
+  background: #fff;
+  color: #f366b9;
 }
 
 #type-container .default-color {
-  color: rosybrown;
+  background: #252525;
+  color: #fff;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#type-container .default-color:hover {
+  background: #fff;
+  color: #252525;
 }
 
 article {
@@ -83,6 +260,7 @@ article {
 }
 
 article #loading-img {
+  margin-top: 70px;
   width: 280px;
   -webkit-animation: rotation 3s infinite linear;
           animation: rotation 3s infinite linear;

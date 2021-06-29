@@ -4,48 +4,95 @@ body{
     box-sizing: border-box;
 }
 
+@mixin type-style-simple($bg, $color){
+    background:$bg;
+    color: $color;
+    transition: 0.2s;
+    &:hover{
+        background:#fff;
+        color:$bg;
+    }
+}
+
+@mixin type-style-gradient($top-color, $bot-color, $text-color){
+    background: linear-gradient(180deg, $top-color 50%, $bot-color 50%);
+    color: $text-color;
+    transition: 0.2s;
+    &:hover{
+        background:#fff;
+        color: $top-color
+    }
+}
+
 #type-container{
+    margin-top: 20px;
     padding:0;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    gap:5px;
     li{
-        width: 100%;
-        list-style: none;
         display:flex;
         justify-content: center;
+        list-style: none;
         cursor:pointer;
         text-transform: capitalize;
+        border: 2px solid #a4a4a4;
+        border-radius: 5px;
+        min-width: 110px;
+        max-width: 150px;
+        padding-bottom: 2px;
     }
     .fire-type{
-        background:orange;
-        color:white;
-        transition: 0.2s;
-        &:hover{
-            background:white;
-            color:orange;
-        }
+        @include type-style-simple(rgb(255, 166, 0), #fff)
     }
     .water-type{
-        color:blue;
+        @include type-style-simple(#4592c4, #fff)
     }
     .grass-type{
-        color:green;
+        @include type-style-simple(#9bcc50, #000000)
+    }
+    .poison-type{
+        @include type-style-simple(#b97fc9, #fff)
     }
     .flying-type{
-        color:red;
+        @include type-style-gradient(#3dc7ef, #bdb9b8, #000000)
     }
-    .thunder-type{
-        color:red;
+    .electric-type{
+        @include type-style-simple(#eed535, #000000)
     }
     .bug-type{
-        color:red;
+        @include type-style-simple(#729f3f, #fff)
     }
     .normal-type{
-        color:red;
+        @include type-style-simple(#a4acaf, #000000)
     }
     .ground-type{
-        color:red;
+        @include type-style-gradient(#f7de3f, #ab9842, #000000)
+    }
+    .fairy-type{
+        @include type-style-simple(#fdb9e9, #000000)
+    }
+    .fighting-type{
+        @include type-style-simple(#d56723, #fff)
+    }
+    .dragon-type{
+        @include type-style-gradient(#53a4cf, #f16e57,#fff)
+    }
+    .ghost-type{
+        @include type-style-simple(#7b62a3, #fff)
+    }
+    .rock-type{
+        @include type-style-simple(#a38c21, #fff)
+    }
+    .ice-type{
+        @include type-style-simple(#51c4e7 , #000000)
+    }
+    .psychic-type{
+        @include type-style-simple(#f366b9, #fff)
     }
     .default-color{
-        color:rosybrown
+        @include type-style-simple(#252525, #fff)
     }
 }
 
@@ -55,6 +102,7 @@ article{
     justify-content: center;
     align-items: center;
     #loading-img{
+        margin-top: 70px;
         width: 280px;
         animation: rotation 3s infinite linear;
     }
@@ -67,4 +115,4 @@ article{
     to {
       transform: rotate(360deg);
     }
-  }
+}

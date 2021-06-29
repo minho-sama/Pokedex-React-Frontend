@@ -9,8 +9,9 @@ nav {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 10px;
   position: relative;
+  background-color: #f11f1f;
+  padding: 8px 0px;
 }
 
 nav img {
@@ -18,8 +19,8 @@ nav img {
 }
 
 nav #git-icon {
-  color: #f11f1f;
-  background: #1a1a1a;
+  color: #f1d621;
+  background: #3580b3;
   border-radius: 50%;
   -webkit-transition: 0.7s;
   transition: 0.7s;
@@ -38,10 +39,17 @@ nav #menu-button {
   cursor: pointer;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  color: #fff;
 }
 
 nav #menu-button:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+@media only screen and (min-width: 900px) {
+  #menu-button {
+    right: 50px;
+  }
 }
 /*# sourceMappingURL=navbar.css.map */

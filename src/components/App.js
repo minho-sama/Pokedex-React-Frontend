@@ -41,6 +41,8 @@ function App() {
     return data
   }
 
+
+  //as we can update the type name, it is smarter to use the id, or type data could include the color in rgb
   function decideTypeColor (name){
     switch (name){
       case 'fire':
@@ -49,16 +51,32 @@ function App() {
         return 'water-type'
       case 'grass':
         return 'grass-type'
+      case 'poison':
+        return "poison-type"
       case 'flying':
         return 'flying-type'
-      case 'thunder':
-        return 'thunder-type'
+      case 'electric':
+        return 'electric-type'
       case 'bug':
         return 'bug-type'
       case 'normal':
         return 'normal-type'
       case 'ground':
         return 'ground-type'
+      case 'fairy':
+        return 'fairy-type'
+      case 'fighting':
+        return 'fighting-type'
+      case 'dragon':
+        return 'dragon-type'
+      case 'ghost':
+        return 'ghost-type'
+      case 'rock':
+        return 'rock-type'
+      case 'ice':
+        return 'ice-type'
+      case 'psychic':
+        return 'psychic-type'
       default:
         return 'default-color'
     }
