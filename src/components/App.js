@@ -7,6 +7,8 @@ import PokemonDetails from './PokemonDetails/PokemonDetails'
 import Loading from './Loading/Loading'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import {Link} from 'react-router-dom'
+import FormAddPokemon from './FormAddPokemon/FormAddPokemon'
+import FormAddType from './FormAddType/FormAddType'
 
 function App() {
   const [types, setTypes] = useState([])
@@ -94,6 +96,9 @@ function App() {
                       </Link>
             })
           }
+          {showTypes && <Link to = '/type/create' > {/*sikeres submit után redirect! */}
+              <button id = "add-type-btn">+ Add Type</button>
+          </Link>}
         </ul>
         <article>
           <Switch>
@@ -104,8 +109,14 @@ function App() {
                 }) :
                 <Loading/>}
             </Route>
+            <Route exact path = "/type/create">
+              <FormAddType/>
+            </Route>
             <Route exact path = '/type/:id'>
                 <TypeDetails decideTypeColor = {decideTypeColor}/>
+            </Route>
+            <Route exact path = "/pokemon/create">
+              <FormAddPokemon decideTypeColor = {decideTypeColor} types = {types}/>
             </Route>
             <Route exact path = '/pokemon/:id'>
               <PokemonDetails  decideTypeColor = {decideTypeColor}/>

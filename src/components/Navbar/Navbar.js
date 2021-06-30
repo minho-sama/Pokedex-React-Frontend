@@ -9,6 +9,9 @@ function Navbar({showTypes, setShowTypes}) {
     return (
         <>
         <nav>
+            <Link to = '/pokemon/create'> {/*ez majd react link lesz, sikeres submit után redirect! */}
+                <button id = "add-pokemon-btn">+ Pokemon</button>
+            </Link>
             <Link to = '/'><img src = "https://i.imgur.com/MHIviTb.png" alt = "pokemon"/></Link>
             <a href = 'https://github.com/minho-sama/Pokedex-React-Frontend' target = '_blank' rel="noreferrer"><AiFillGithub id = "git-icon" size = "40px"/></a>
             <button id = "menu-button" onClick = {() => setShowTypes(!showTypes)}>

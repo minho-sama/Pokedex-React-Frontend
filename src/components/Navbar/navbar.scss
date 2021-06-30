@@ -20,6 +20,17 @@ nav{
         }
     }
 
+    #add-pokemon-btn{
+        position:absolute;
+        background:none;
+        border:none;
+        cursor: pointer;
+        left: 10px;
+        color:white;
+        border: 2px solid #fff;
+        border-radius: 2px;
+    }
+
     #menu-button{
         position:absolute;
         right: 15px;
@@ -34,6 +45,18 @@ nav{
     }
 }
 
+@media only screen and (max-width: 450px) {
+    #git-icon{
+        display:none;
+    }
+    nav{
+        img{
+            width: 140px;
+            margin-left: 30px;
+        }
+    }
+}
+
 @media only screen and (max-width: 550px) {
     nav{
         img{
@@ -43,9 +66,6 @@ nav{
 }
 
 @media only screen and (min-width: 900px) {
-    nav{
-
-    }
     #menu-button{
         right: 50px;
     }

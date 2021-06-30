@@ -33,6 +33,17 @@ nav #git-icon:hover {
           transform: rotate(360deg);
 }
 
+nav #add-pokemon-btn {
+  position: absolute;
+  background: none;
+  border: none;
+  cursor: pointer;
+  left: 10px;
+  color: white;
+  border: 2px solid #fff;
+  border-radius: 2px;
+}
+
 nav #menu-button {
   position: absolute;
   right: 15px;
@@ -47,6 +58,16 @@ nav #menu-button {
 nav #menu-button:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+@media only screen and (max-width: 450px) {
+  #git-icon {
+    display: none;
+  }
+  nav img {
+    width: 140px;
+    margin-left: 30px;
+  }
 }
 
 @media only screen and (max-width: 550px) {
