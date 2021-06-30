@@ -18,7 +18,8 @@ section h1 {
   font-size: 25px;
   margin: 5px 0px 0px;
   cursor: pointer;
-  color: black;
+  color: #000000;
+  text-shadow: none;
 }
 
 section h1:hover {

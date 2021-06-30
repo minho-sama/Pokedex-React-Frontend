@@ -27,7 +27,7 @@ function App() {
         setPokemons(pokemons)
       }
       getPokemons()
-  }, [])
+  }, [types])
 
   const fetchTypes = async ()=>{
       const res = await fetch('https://pokedex-api-minho.herokuapp.com/pokedex/types')

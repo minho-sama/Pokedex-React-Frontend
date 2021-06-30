@@ -275,8 +275,6 @@
 }
 
 .pokemon-details-page .type-grid li {
-  -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-          box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
   list-style: none;
   cursor: pointer;
   text-transform: capitalize;
