@@ -16,6 +16,9 @@ gombra katt (semmi új page, mint bayern-webshop )lekérni az arrayt
 Apróságok:
 serveroldalon pokemonok neveit mentésnél .toUpperCase()
 Implementelni password rendszert delete es update methodre! (SPA elveket követni)
+    amíg nem egyezik a password addig disabled a gomb
     ehhez kell env.variables, csak a végén baszakodj ezzel! (+mongodb)
     link: mdn locallib deployment vége
+
+
 SASS-sal csinálni, transition property mindenre for smoothness

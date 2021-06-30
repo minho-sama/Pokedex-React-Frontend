@@ -1,7 +1,12 @@
 import './App.css';
 import {useState, useEffect} from 'react'
 import Navbar from './Navbar/Navbar'
-import PokemonCard from './Pokemonard/PokemonCard'
+import PokemonCard from './PokemonCard/PokemonCard'
+import TypeDetails from './TypeDetails/TypeDetails'
+import PokemonDetails from './PokemonDetails/PokemonDetails'
+import Loading from './Loading/Loading'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 function App() {
   const [types, setTypes] = useState([])
@@ -33,18 +38,6 @@ function App() {
     const data = await res.json()
     return data
   }
-
-  //typecontrollers
-
-  //ez menjen majd a routeba ahol type szerint listelem a pokemonokat
-    //ott lehet CRUD-olni
-    //nem kell újraírni mindent, importáld a pokemoncardokat és a sass-t is!!!
-  const fetchPokemonsByType = async (id) => {
-    const res = await fetch(`https://pokedex-api-minho.herokuapp.com/pokedex/type/${id}`)
-    const data = await res.json()
-    return data
-  }
-
 
   //as we can update the type name, it is smarter to use the id, or type data could include the color in rgb
   function decideTypeColor (name){
@@ -88,28 +81,38 @@ function App() {
 
   return (
     <>
+    <Router>
       <Navbar showTypes = {showTypes} setShowTypes = {setShowTypes}/>
       <ul id = "type-container">
           {
             showTypes && types.map(type => {
-                return <li 
-                        onClick ={() => alert(type._id)}
-                        className = {decideTypeColor(type.name)}
-                        key = {type._id}>
-                        {type.name}
-                        </li>
+                return <Link to = {`/type/${type._id}`} style={{ textDecoration: 'none', color:'black'}} key = {type._id}>
+                        <li className = {decideTypeColor(type.name)}
+                          key = {type._id}>
+                          {type.name}
+                          </li>
+                      </Link>
             })
           }
         </ul>
         <article>
-          {
-            pokemons.length > 0 ? 
-            pokemons.map(pokemon => {
-              return <PokemonCard key = {pokemon._id} pokemon = {pokemon} decideTypeColor = {decideTypeColor} />
-            }) :
-            <img id = "loading-img" src = "https://i.imgur.com/IvobJfq.png" alt = "pokeball"/>
-          }
+          <Switch>
+            <Route exact path = '/'>
+              {pokemons.length > 0 ? 
+                pokemons.map(pokemon => {
+                  return <PokemonCard key = {pokemon._id} pokemon = {pokemon} decideTypeColor = {decideTypeColor} />
+                }) :
+                <Loading/>}
+            </Route>
+            <Route exact path = '/type/:id'>
+                <TypeDetails decideTypeColor = {decideTypeColor}/>
+            </Route>
+            <Route exact path = '/pokemon/:id'>
+              <PokemonDetails  decideTypeColor = {decideTypeColor}/>
+            </Route>
+          </Switch>
         </article>
+      </Router>
     </>
   );
 }

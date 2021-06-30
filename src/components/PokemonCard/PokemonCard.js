@@ -1,12 +1,15 @@
 import React from 'react'
 import './PokemonCard.css'
+import {Link} from 'react-router-dom'
 const uniqid = require('uniqid');
 
 function PokemonCard({pokemon, decideTypeColor}) {
     return (
         <section>
-            <img src = {pokemon.img_url} alt = {pokemon.name}/>
-            <h1>{pokemon.name}</h1>
+            <Link to = {`/pokemon/${pokemon._id}`} style={{ textDecoration: 'none' }}>
+                <img src = {pokemon.img_url} alt = {pokemon.name}/>
+                <h1>{pokemon.name}</h1>
+            </Link>
             <ul>
             {
                 pokemon.type.map(type => {

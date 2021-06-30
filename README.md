@@ -1,6 +1,6 @@
 A Pokedex front-end made with React for my Pokedex-REST API. You can create, read, update and delete pokemons and pokemon types.<br>
 Live preview: <br>
-Link to the API: 
+Link to my API: 
 
 # Getting Started with Create React App
 

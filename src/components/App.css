@@ -285,33 +285,4 @@ article {
   gap: 15px;
   margin-top: 20px;
 }
-
-article #loading-img {
-  margin-top: 70px;
-  width: 280px;
-  -webkit-animation: rotation 3s infinite linear;
-          animation: rotation 3s infinite linear;
-}
-
-@-webkit-keyframes rotation {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@keyframes rotation {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
 /*# sourceMappingURL=App.css.map */
