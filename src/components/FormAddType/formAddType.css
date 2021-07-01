@@ -1,5 +1,5 @@
-#type-add-form, #pokemon-add-form {
-  margin-top: 20px;
+#type-add-form {
+  margin: 20px auto 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11,22 +11,22 @@
   gap: 20px;
 }
 
-#type-add-form label, #pokemon-add-form label {
+#type-add-form label {
   font-weight: 600;
 }
 
-#type-add-form input, #pokemon-add-form input {
+#type-add-form input {
   padding: 5px;
   border: 2px solid black;
   color: #f11f1f;
   font-weight: 600;
 }
 
-#type-add-form input:focus, #pokemon-add-form input:focus {
+#type-add-form input:focus {
   outline: none;
 }
 
-#type-add-form button, #pokemon-add-form button {
+#type-add-form button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -41,13 +41,13 @@
   transition: 0.3s;
 }
 
-#type-add-form button:hover, #pokemon-add-form button:hover {
+#type-add-form button:hover {
   -webkit-transform: translateY(3px);
           transform: translateY(3px);
 }
 
 @media only screen and (max-width: 600px) {
-  #type-add-form, #pokemon-add-form {
+  #type-add-form {
     width: 90%;
   }
 }

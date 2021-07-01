@@ -116,7 +116,7 @@ function App() {
                 <TypeDetails decideTypeColor = {decideTypeColor}/>
             </Route>
             <Route exact path = "/pokemon/create">
-              <FormAddPokemon decideTypeColor = {decideTypeColor} types = {types}/>
+              <FormAddPokemon decideTypeColor = {decideTypeColor} fetchTypes = {fetchTypes}/>
             </Route>
             <Route exact path = '/pokemon/:id'>
               <PokemonDetails  decideTypeColor = {decideTypeColor}/>

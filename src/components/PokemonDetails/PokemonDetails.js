@@ -1,5 +1,5 @@
 import React from 'react'
-import {useParams} from 'react-router-dom'
+import {useParams, useHistory} from 'react-router-dom'
 import {useState, useEffect} from 'react'
 import Loading from '../Loading/Loading'
 import './PokemonDetails.css'
@@ -8,6 +8,10 @@ const uniqid = require('uniqid');
 function PokemonDetails({decideTypeColor}) {
     const {id} = useParams()
     const [pokemon, setPokemon] = useState({})
+    const history = useHistory()
+    const [psw, setPsw] = useState("")
+    const [showPsw, setShowPsw] = useState(false)
+    const password = "plsdontdeletety00"
 
     useEffect(() => {
         const getPokemon = async () => {
@@ -24,7 +28,15 @@ function PokemonDetails({decideTypeColor}) {
     async function fetchPokemon (){
         const response = await fetch(`https://pokedex-api-minho.herokuapp.com/pokedex/pokemon/${id}`)
         const data = await response.json()
-        return data
+        return data 
+    }
+
+    const handleDelete = () => {
+        fetch(`https://pokedex-api-minho.herokuapp.com/pokedex/pokemon/${id}/delete`, {
+            method: 'DELETE'
+        }).then(() => {
+            history.push('/')
+        })
     }
 
     return (
@@ -33,7 +45,12 @@ function PokemonDetails({decideTypeColor}) {
             isEmptyObject(pokemon) ? <Loading/> :
             <>
             <h1 id = "mobile-name">{pokemon.name}</h1>
-            <img src = {pokemon.img_url} alt = {pokemon.name}/>
+            <img src = {pokemon.img_url === undefined ||
+                            pokemon.img_url.trim().length === 0? 
+                            "https://i.imgur.com/IvobJfq.png" : 
+                            pokemon.img_url
+                        } 
+                    alt = {pokemon.name}/>
             <div className = 'container'>
                 <h1 id = "name">{pokemon.name}</h1>
                 <figcaption>
@@ -59,10 +76,22 @@ function PokemonDetails({decideTypeColor}) {
                     <button>
                         Update Info
                     </button>
-                    <button>
-                        Delete Pokemon
-                    </button>
+                    {  
+                        psw === password ? 
+                        <button onClick = {handleDelete}>
+                            Delete Pokemon
+                        </button> : 
+                        <button id = "disabled" onClick = {() => setShowPsw(true)}>
+                            Delete Pokemon
+                        </button>
+                    }
                 </section>
+                {
+                    showPsw && <div id = "psw-container">
+                    <label for = "psw">Password for Updating & Deleteing Pokemon</label>
+                    <input type = "password" id = "psw" value = {psw} onChange = {(e) => setPsw(e.target.value)}></input>
+                </div>
+                }
             </div>
             </>
           }

@@ -1,5 +1,5 @@
-#type-add-form, #pokemon-add-form{
-    margin-top: 20px;
+#type-add-form{ //#pokemon-add-form
+    margin: 20px auto 40px;
     display:flex;
     flex-direction:column;
     width: 400px;
@@ -31,7 +31,9 @@
 }
 
 @media only screen and (max-width: 600px) {
-    #type-add-form, #pokemon-add-form{
+    #type-add-form{ //#pokemon-add-form
         width: 90%;
     }
 }
+
+//pokemon add form legyen 2 column nagyképernyőn!

@@ -1,1 +1,74 @@
-@import '../../partials/add-form' 
+// @import '../../partials/add-form' ;
+@import '../../partials/type-schema';
+@import '../../partials/type-classnames';
+
+#pokemon-add-form{
+    margin: 20px auto 40px;
+    display:flex;
+    flex-direction:column;
+    width: 400px;
+    gap: 20px;
+    label{
+        font-weight: 600;
+    }
+    input{
+        padding: 5px;
+        border: 2px solid black;
+        &:focus{
+            outline: none;
+        }
+        color:rgb(241, 31, 31);
+        font-weight: 600;
+    }
+    button{
+        text-align:center;
+        padding: 3px;
+        background: none;
+        border: 2px solid #000000;
+        cursor: pointer;
+        transition: 0.3s;
+        &:hover{
+            transform: translateY(3px);
+        }
+    }
+    .flex-wrapper{
+        display:flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    legend{
+        font-weight: 600;
+    }
+    fieldset{
+        max-height: 250px;
+        display:flex;
+        flex-direction:column;
+        flex-wrap:wrap;
+        gap: 10px;
+        label{
+            border-radius: 3px;
+            border: 2px solid grey;
+            font-size: 14px;
+            padding: 0px 5px;
+            pointer-events:none;
+        }
+    }
+    button{
+        color:#fff;
+        background: #000000;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    #pokemon-add-form{
+        width: 80%;
+        display:flex;
+        gap: 100px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        .flex-wrapper{
+            width: 50%;
+        }
+    }
+}
