@@ -4,6 +4,11 @@ h1{
   width: 100%;
   text-align: center;
   margin: 30px auto 10px;
+  span{
+    border-radius: 10px;
+    border: 2px solid #a4a4a4;
+    padding: 0px 7px 2px;
+  }
 }
 
 .type-controllers{

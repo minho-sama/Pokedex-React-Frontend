@@ -6,6 +6,12 @@ h1 {
   margin: 30px auto 10px;
 }
 
+h1 span {
+  border-radius: 10px;
+  border: 2px solid #a4a4a4;
+  padding: 0px 7px 2px;
+}
+
 .type-controllers {
   width: 100%;
   display: -webkit-box;

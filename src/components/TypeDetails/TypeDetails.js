@@ -47,7 +47,7 @@ function TypeDetails({decideTypeColor}) {
 
     return (
         <>
-        <h1>{type.name} type Pokemons:</h1>
+        <h1><span className = {decideTypeColor(type.name)}>{type.name}</span> type Pokemons:</h1>
         <div className = "type-controllers">
           <Link to = {`/type/${id}/update`}>
             <button>Update Type</button>
