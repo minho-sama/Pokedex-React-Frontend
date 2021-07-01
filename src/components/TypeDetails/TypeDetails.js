@@ -16,7 +16,7 @@ function TypeDetails({decideTypeColor}) {
   const [showDeleteAlert, setShowDeleteAlert] = useState(false)
 
   const history = useHistory()
-
+ 
   useEffect(() => {
     const getType = async () => {
       const typeFromServer = await fetchType(id)
@@ -49,7 +49,9 @@ function TypeDetails({decideTypeColor}) {
         <>
         <h1>{type.name} type Pokemons:</h1>
         <div className = "type-controllers">
-          <button>Update Type</button>
+          <Link to = {`/type/${id}/update`}>
+            <button>Update Type</button>
+          </Link>
           <button onClick = {handleDelete}>Delete Type</button>
         </div>
         <article>

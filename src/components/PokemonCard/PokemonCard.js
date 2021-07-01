@@ -8,7 +8,7 @@ function PokemonCard({pokemon, decideTypeColor}) {
         <section>
             <Link to = {`/pokemon/${pokemon._id}`} style={{ textDecoration: 'none' }}>
                 <img src = {pokemon.img_url === undefined ||
-                            pokemon.img_url.trim().length === 0? 
+                            pokemon.img_url == null ? 
                             "https://i.imgur.com/IvobJfq.png" : 
                             pokemon.img_url
                         } 

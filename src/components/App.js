@@ -2,6 +2,7 @@ import './App.css';
 import {useState, useEffect} from 'react'
 import Navbar from './Navbar/Navbar'
 import PokemonCard from './PokemonCard/PokemonCard'
+import FormPatchType from './FormPatchType/FormPatchType';
 import TypeDetails from './TypeDetails/TypeDetails'
 import PokemonDetails from './PokemonDetails/PokemonDetails'
 import Loading from './Loading/Loading'
@@ -111,6 +112,9 @@ function App() {
             </Route>
             <Route exact path = "/type/create">
               <FormAddType/>
+            </Route>
+            <Route exact path = '/type/:id/update'>
+                <FormPatchType />
             </Route>
             <Route exact path = '/type/:id'>
                 <TypeDetails decideTypeColor = {decideTypeColor}/>
