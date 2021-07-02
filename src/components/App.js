@@ -104,7 +104,7 @@ function App() {
         </ul>
         <article>
           <Switch>
-            <Route exact path = {['/', 'Pokedex-React-Frontend']}>
+            <Route exact path = {['/', '/Pokedex-React-Frontend']}>
               {pokemons.length > 0 ? 
                 pokemons.map(pokemon => {
                   return <PokemonCard key = {pokemon._id} pokemon = {pokemon} decideTypeColor = {decideTypeColor} />
