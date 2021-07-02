@@ -52,7 +52,7 @@ body {
   list-style: none;
   cursor: pointer;
   text-transform: capitalize;
-  border: 2px solid #a4a4a4;
+  border: 2px solid #f7eeee;
   border-radius: 5px;
   min-width: 110px;
   max-width: 150px;
@@ -271,6 +271,8 @@ body {
   border: none;
   background: none;
   cursor: pointer;
+  min-width: 113px;
+  max-width: 150px;
 }
 
 article {
