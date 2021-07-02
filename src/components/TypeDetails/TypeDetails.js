@@ -58,7 +58,7 @@ function TypeDetails({decideTypeColor}) {
           { pokemonsByType.length > 0 ? 
             pokemonsByType.map(pokemon => {
               return (
-                <PokemonCard pokemon = {pokemon} decideTypeColor = {decideTypeColor}/>
+                <PokemonCard pokemon = {pokemon} decideTypeColor = {decideTypeColor} key = {pokemon._id}/>
               )
             })
             : <Loading/>
@@ -71,7 +71,7 @@ function TypeDetails({decideTypeColor}) {
           <ul>
             {
               pokemonsByType.map(pokemon => {
-                return <Link to = {`/pokemon/${pokemon._id}`} style={{ textDecoration: 'none' }}><li>{pokemon.name}</li></Link>
+                return <Link to = {`/pokemon/${pokemon._id}`} style={{ textDecoration: 'none' }}><li key = {pokemon._id}>{pokemon.name}</li></Link>
               })
             }
           </ul>

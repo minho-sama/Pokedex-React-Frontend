@@ -14,7 +14,7 @@ $boxshadow: 1px 1px 3px rgba(0,0,0,0.3);
     #name{
         display:none;
     }
-    img{
+    img{ 
         width: 80%;
         margin: auto 10%;
         background: rgb(236, 236, 236);
@@ -54,6 +54,7 @@ $boxshadow: 1px 1px 3px rgba(0,0,0,0.3);
     .type-grid{
         padding-left:50px;
         display:flex;
+        flex-wrap:wrap;
         gap: 20px;
         li{
             list-style: none;

@@ -1,19 +1,19 @@
 import React from 'react'
-// import {SiPokemon} from 'react-icons/si'
 import {useState, useEffect} from 'react'
-// import { CgOptions } from 'react-icons/cg'
-import './formAddPokemon.css'
-import {useHistory} from 'react-router-dom'
-
+import './formAddPokemon.css' 
+import {useHistory} from 'react-router-dom' 
+ 
 function FormAddPokemon({fetchTypes, decideTypeColor}) {
     const [pokemonName, setPokemonName] = useState("")
-    const [description, setDescription] = useState() //ezzel csináláni vmit, remove obj properties if .trim().length === 0
+    const [description, setDescription] = useState(undefined) //ezzel csináláni vmit, remove obj properties if .trim().length === 0
                                                     //conditional rendering direktben a pokemon objectben?
-    const [height, setHeight] = useState()
-    const [weight, setWeight] = useState()
+    const [height, setHeight] = useState(undefined)
+    const [weight, setWeight] = useState(undefined) 
     const [checkedTypes, setCheckedTypes] = useState([])
-    const [img_url, setImg_url] = useState()
+    const [img_url, setImg_url] = useState(undefined)
 
+    const [showAlert, setShowAlert] = useState(false)
+    const [alertMessage, setAlertMessage] = useState("")
     const [isPending, setIsPending] = useState(false)
     const [typesFromServer, setTypesFromServer] = useState([])
     const history = useHistory()
@@ -29,28 +29,34 @@ function FormAddPokemon({fetchTypes, decideTypeColor}) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const pokemon = {
-            name: pokemonName,
-            description: description,
-            height: height,
-            weight: weight,
-            type: checkedTypes,
-            img_url: img_url
+        if(checkedTypes.length <1){
+            setShowAlert(true)
+            setAlertMessage('Pokémon must have at least 1 type')
+            return
+        } else{
+            const pokemon = {
+                name: pokemonName,
+                description: description,
+                height: height,
+                weight: weight,
+                type: checkedTypes.slice(0,2),
+                img_url: img_url
+            }
+            console.log(pokemon)
+            // Object.keys(pokemon).forEach((k) => pokemon[k] == undefined && delete pokemon[k]);
+            setIsPending(true)
+            fetch('https://pokedex-api-minho.herokuapp.com/pokedex/pokemon/create', {
+                method: 'POST',
+                headers: {'Content-Type': "application/json"},
+                body: JSON.stringify(pokemon)
+            }).then((res) => {
+                return res.json()
+            }).then((newPokemon) => {
+                console.log(newPokemon)
+                history.push(`/pokemon/${newPokemon._id}`)
+                setIsPending(false)
+            })
         }
-        console.log(pokemon)
-        // Object.keys(pokemon).forEach((k) => pokemon[k] == undefined && delete pokemon[k]);
-        setIsPending(true)
-        fetch('https://pokedex-api-minho.herokuapp.com/pokedex/pokemon/create', {
-            method: 'POST',
-            headers: {'Content-Type': "application/json"},
-            body: JSON.stringify(pokemon)
-        }).then((res) => {
-            return res.json()
-        }).then((newPokemon) => {
-            console.log(newPokemon)
-            history.push(`/pokemon/${newPokemon._id}`)
-            setIsPending(false)
-        })
     }
 
     const handleCheckbox = (e) => {
@@ -58,15 +64,19 @@ function FormAddPokemon({fetchTypes, decideTypeColor}) {
         if(currentTypes.includes(e.target.value)){
             let index = currentTypes.indexOf(e.target.value)
             currentTypes.splice(index, 1)
+        } 
+        else if(currentTypes.length === 2){
+            setShowAlert(true)
+            setAlertMessage("Pokemon must have a maximum of 2 types")
+            currentTypes.push(e.target.value)
         } else{
             currentTypes.push(e.target.value)
         }
-        setCheckedTypes([...currentTypes])
-        console.log("checkedTypes " + JSON.stringify(checkedTypes))
+        setCheckedTypes(currentTypes)
     }
 
     return (
-        <form onSubmit = {handleSubmit} id = "pokemon-add-form">
+        <form id = "pokemon-add-form" onSubmit = {handleSubmit}>
             <div className = "flex-wrapper">
                 <label htmlFor = "name">Pokemon's Name:</label>
                 <input required value = {pokemonName}
@@ -79,7 +89,7 @@ function FormAddPokemon({fetchTypes, decideTypeColor}) {
                     onChange = {(e) => {setDescription(e.target.value)}}
                     type = 'textarea' id = "description" placeholder = "optional"  name='description'>
                 </input>
-
+ 
                 <label htmlFor = "height">Pokemon's height (cm):</label>
                 <input value = {height}
                     onChange = {(e) => {setHeight(e.target.value)}}
@@ -93,6 +103,7 @@ function FormAddPokemon({fetchTypes, decideTypeColor}) {
                 </input>
             </div>
             <div className = 'flex-wrapper'>
+                {showAlert && <p id = "type-alert-msg">{alertMessage}</p>}
                 <fieldset>
                     <legend>Choose Types</legend>
                     {

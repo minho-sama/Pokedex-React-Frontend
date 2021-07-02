@@ -1,8 +1,8 @@
 import React from 'react'
-import {useParams, useHistory} from 'react-router-dom'
+import {useParams, useHistory, Link} from 'react-router-dom'
 import {useState, useEffect} from 'react'
 import Loading from '../Loading/Loading'
-import './PokemonDetails.css'
+import './PokemonDetails.css' 
 const uniqid = require('uniqid');
 
 function PokemonDetails({decideTypeColor}) {
@@ -46,7 +46,7 @@ function PokemonDetails({decideTypeColor}) {
             <>
             <h1 id = "mobile-name">{pokemon.name}</h1>
             <img src = {pokemon.img_url === undefined ||
-                            pokemon.img_url.trim().length === 0? 
+                        pokemon.img_url === null ? 
                             "https://i.imgur.com/IvobJfq.png" : 
                             pokemon.img_url
                         } 
@@ -54,16 +54,17 @@ function PokemonDetails({decideTypeColor}) {
             <div className = 'container'>
                 <h1 id = "name">{pokemon.name}</h1>
                 <figcaption>
-                    { pokemon.description === undefined ? `No description avalaible for ${pokemon.name}`:
-                      pokemon.description.charAt(0).toUpperCase() + pokemon.description.slice(1)
+                    { pokemon.description === undefined ||
+                      pokemon.description === null ? `No description avalaible for ${pokemon.name}`:
+                      pokemon.description
                     }
                 </figcaption>
                 <ul className = "data-grid">
-                    <li><span>Height: </span> {pokemon.height === undefined ? 'N.A.' : pokemon.height} <span> cm</span></li>
-                    <li><span>Weight: </span> {pokemon.weight === undefined ? 'N.A.' : pokemon.weight} <span> kg</span></li>
+                    <li><span>Height: </span> {pokemon.height === undefined || pokemon.height === null ? 'N.A.' : pokemon.height} <span> cm</span></li>
+                    <li><span>Weight: </span> {pokemon.weight === undefined || pokemon.weight === null ? 'N.A.' : pokemon.weight} <span> kg</span></li>
                 </ul>
                 <ul className = "type-grid">
-                {pokemon.type.map(type => {
+                {pokemon.type && pokemon.type.map(type => {
                     return (
                         <li key = {uniqid()}
                         className = {decideTypeColor(type.name)}>
@@ -73,9 +74,9 @@ function PokemonDetails({decideTypeColor}) {
                 })}
                 </ul>
                 <section className = 'control-btns'>
-                    <button>
-                        Update Info
-                    </button>
+                    <Link to = {`/pokemon/${id}/update`}>
+                        <button>Update Info</button>
+                    </Link>
                     {  
                         psw === password ? 
                         <button onClick = {handleDelete}>
@@ -88,7 +89,7 @@ function PokemonDetails({decideTypeColor}) {
                 </section>
                 {
                     showPsw && <div id = "psw-container">
-                    <label for = "psw">Password for Updating & Deleteing Pokemon</label>
+                    <label for = "psw">Password for Deleteing Pokemon</label>
                     <input type = "password" id = "psw" value = {psw} onChange = {(e) => setPsw(e.target.value)}></input>
                 </div>
                 }

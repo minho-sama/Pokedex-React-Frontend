@@ -30,6 +30,8 @@ section ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 17px;
   margin: 5px 0px 0px;
   padding: 0px;

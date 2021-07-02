@@ -12,6 +12,7 @@ function PokemonCard({pokemon, decideTypeColor}) {
                             "https://i.imgur.com/IvobJfq.png" : 
                             pokemon.img_url
                         } 
+                        // onError={`${pokemon.img_url}='https://i.imgur.com/IvobJfq.png`}
                     alt = {pokemon.name}/>
                 <h1>{pokemon.name}</h1>
             </Link>

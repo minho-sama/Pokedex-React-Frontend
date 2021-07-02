@@ -8,9 +8,9 @@ function FormPatchType() {
 
     const [type, setType] = useState({})
     const [typeName, setTypeName] = useState("")
-    const [isPending, setIsPending] = useState(false)
     const history = useHistory()
     const {id} = useParams()
+    const [isPending, setIsPending] = useState(false)
 
     useEffect(() => {
         const getType = async () => {
@@ -29,8 +29,8 @@ function FormPatchType() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        setIsPending(true)
         const type = {name: typeName}
+        setIsPending(true)
 
         fetch(`https://pokedex-api-minho.herokuapp.com/pokedex/type/${id}/update`, {
             method: 'PATCH',
@@ -54,8 +54,8 @@ function FormPatchType() {
                 }}
                 type = 'text' id = "name" placeholder = "e.g. Earth, Wind, Fire"  name='name'>
             </input>
-            {!isPending && <button type = "submit"> <CgPokemon/> Update Type</button> }
-            {isPending && <button type = "submit" disabled><CgPokemon/> Updating Type... </button> }
+            {!isPending && <button> <CgPokemon/> Update Type</button> }
+            {isPending && <button disabled><CgPokemon/> Updating Type... </button> }
         </form>
     )
 }

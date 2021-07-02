@@ -215,6 +215,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   width: 400px;
+  min-height: 530px;
   gap: 20px;
 }
 
@@ -261,6 +262,12 @@
 
 #pokemon-add-form legend {
   font-weight: 600;
+}
+
+#pokemon-add-form #type-alert-msg {
+  color: #f11f1f;
+  font-weight: 600;
+  margin: 10px 0px -15px;
 }
 
 #pokemon-add-form fieldset {
