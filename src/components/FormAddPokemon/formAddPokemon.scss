@@ -3,7 +3,7 @@
 @import '../../partials/type-classnames';
 
 #pokemon-add-form{
-    margin: 20px auto 40px;
+    margin: 20px 10px 40px;
     display:flex;
     flex-direction:column;
     width: 400px;
@@ -15,11 +15,11 @@
     input{
         padding: 5px;
         border: 2px solid black;
+        color:rgb(241, 31, 31);
+        font-weight: 600;
         &:focus{
             outline: none;
         }
-        color:rgb(241, 31, 31);
-        font-weight: 600;
     }
     button{
         text-align:center;
