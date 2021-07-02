@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Pokedex-React-Frontend/static/css/main.95e1eb9a.chunk.css",
-    "main.js": "/Pokedex-React-Frontend/static/js/main.2ad90a3b.chunk.js",
-    "main.js.map": "/Pokedex-React-Frontend/static/js/main.2ad90a3b.chunk.js.map",
+    "main.js": "/Pokedex-React-Frontend/static/js/main.74b19a58.chunk.js",
+    "main.js.map": "/Pokedex-React-Frontend/static/js/main.74b19a58.chunk.js.map",
     "runtime-main.js": "/Pokedex-React-Frontend/static/js/runtime-main.764737c5.js",
     "runtime-main.js.map": "/Pokedex-React-Frontend/static/js/runtime-main.764737c5.js.map",
     "static/js/2.670df1a6.chunk.js": "/Pokedex-React-Frontend/static/js/2.670df1a6.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.764737c5.js",
     "static/js/2.670df1a6.chunk.js",
     "static/css/main.95e1eb9a.chunk.css",
-    "static/js/main.2ad90a3b.chunk.js"
+    "static/js/main.74b19a58.chunk.js"
   ]
 }
